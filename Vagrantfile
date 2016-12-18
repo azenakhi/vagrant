@@ -5,6 +5,7 @@ labvm1_disk2 = '/Users/azenakhi/downloads/vagrant/labvm1_disk2.vdi'
 Vagrant.configure(2) do |config|
 
     config.vm.box = "bento/centos-7.2"
+    config.vm.network "public_network", bridge: 'vboxnet0'
 
     config.vm.provider "virtualbox" do |vb|
         vb.customize ["modifyvm", :id, "--memory", "2048", "--cpus", "1"]
